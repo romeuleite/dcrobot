@@ -9,10 +9,11 @@ import Curiosidade from './src/screens/Curiosidade';
 import Piada from './src/screens/Piada';
 import Mapa from './src/screens/Mapa';
 import Colorconfig from './src/screens/Colorconfig';
-
+import Clima from './src/screens/Clima';
+import Info from './src/screens/Info';
 
 export default function App() {
   return (
-    <Mapa/>
+    <Info/>
   );
 };
