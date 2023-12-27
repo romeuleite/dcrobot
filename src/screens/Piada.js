@@ -1,32 +1,42 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import { MaterialCommunityIcons, Ionicons, FontAwesome, FontAwesome5, Foundation, Entypo } from '@expo/vector-icons';
+import { listaPiadas } from '../utilities/listaPiadas';
 
 const Piada = () => {
+  const [randomNumber, setRandomNumber] = useState(1)
+
+  generateRandomNumber = () => {
+    const min = 1;
+    const max = 21;
+    setRandomNumber(Math.floor(Math.random() * (max - min + 1)) + min)
+  };
+
   return (
     <View style={styles.container}>
-        <View style={styles.robotChatView}>
-            <Image source={require('../assets/robo-alegre.png')} style={styles.homeImage}/>
-            <View style={styles.robotSentencesView}> 
-                <Text style={styles.robotChatText}>O que é um terapeuta? {'\n'} 1.024 gigapeutas</Text>
-            </View>
+      <View style={styles.robotChatView}>
+        <Image source={require('../assets/robo-alegre.png')} style={styles.homeImage} />
+        <View style={styles.robotSentencesView}>
+          <Text style={styles.robotChatText}>{listaPiadas[randomNumber-1]}</Text>
         </View>
-        <View style={styles.robotChatView}>
-            <View style={styles.robotSentencesView}>
-                <View style={styles.convView}>
-                    <Text style={styles.continueText}>Contar outra piada</Text>
-                    <TouchableOpacity><MaterialCommunityIcons name="send-circle" size={52} color="#47B9F5" /></TouchableOpacity>
-                </View>
-            </View>
+      </View>
+      <View style={styles.robotChatView}>
+        <View style={styles.robotSentencesView}>
+          <View style={styles.convView}>
+            <Text style={styles.continueText}>Contar outra piada</Text>
+            <TouchableOpacity onPress={this.generateRandomNumber}><MaterialCommunityIcons name="send-circle" size={52} color="#47B9F5" /></TouchableOpacity>
+          </View>
         </View>
-        <TouchableOpacity style={styles.backButton}><FontAwesome name="long-arrow-left" size={32} color="#fff" /></TouchableOpacity>
-        <View style={styles.sideBar}>
-            <TouchableOpacity style={styles.iconBox}><Ionicons name="settings-sharp" size={24} color="#fff" /></TouchableOpacity>
-            <TouchableOpacity style={styles.iconBox}><FontAwesome5 name="info" size={24} color="#fff" /></TouchableOpacity>
-            <TouchableOpacity style={styles.iconBox}><Ionicons name="cloud" size={24} color="#fff" /></TouchableOpacity>
-            <TouchableOpacity style={styles.iconBox}><Foundation name="map" size={24} color="#fff" /></TouchableOpacity>
-            <TouchableOpacity style={styles.iconBox}><Entypo name="home" size={24} color="#fff" /></TouchableOpacity>
-        </View>
+      </View>
+      <TouchableOpacity style={styles.backButton}><FontAwesome name="long-arrow-left" size={32} color="#fff" /></TouchableOpacity>
+      <View style={styles.sideBar}>
+        <TouchableOpacity style={styles.iconBox}><Ionicons name="settings-sharp" size={24} color="#fff" /></TouchableOpacity>
+        <TouchableOpacity style={styles.iconBox}><FontAwesome5 name="info" size={24} color="#fff" /></TouchableOpacity>
+        <TouchableOpacity style={styles.iconBox}><Ionicons name="cloud" size={24} color="#fff" /></TouchableOpacity>
+        <TouchableOpacity style={styles.iconBox}><Foundation name="map" size={24} color="#fff" /></TouchableOpacity>
+        <TouchableOpacity style={styles.iconBox}><Entypo name="home" size={24} color="#fff" /></TouchableOpacity>
+      </View>
       <StatusBar style="auto" />
     </View>
   );
@@ -40,12 +50,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     gap: 50,
   },
-  robotChatView:{
+  robotChatView: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
   },
-  robotSentencesView:{
+  robotSentencesView: {
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
@@ -55,23 +65,22 @@ const styles = StyleSheet.create({
     backgroundColor: '#ECECEC',
     borderRadius: 10,
     width: 280,
-    height: 100,
     margin: 5,
     padding: 10,
     textAlignVertical: 'center',
     textAlign: 'left',
   },
-  convView:{
+  convView: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
   },
   homeImage: {
     resizeMode: 'contain',
-    width:100,
-    height:120,
+    width: 100,
+    height: 120,
   },
-  continueText:{
+  continueText: {
     fontSize: 18,
     backgroundColor: '#47B9F5',
     color: 'white',
@@ -82,7 +91,7 @@ const styles = StyleSheet.create({
     textAlignVertical: 'center',
     textAlign: 'left',
   },
-  sideBar:{
+  sideBar: {
     backgroundColor: "#195AA5",
     borderRadius: 10,
     position: 'absolute',
@@ -90,8 +99,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     gap: 8,
-    width:60,
-    height:250,
+    width: 60,
+    height: 250,
     left: 20,
     bottom: 30,
   },

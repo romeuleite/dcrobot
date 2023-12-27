@@ -1,23 +1,33 @@
 import { StatusBar } from 'expo-status-bar';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { listaCuriosidades } from '../utilities/listaCuriosidades';
 
 import Leftnavmenu from '../components/Leftnavmenu';
 
 const Curiosidade = () => {
+  const [randomNumber, setRandomNumber] = useState(1)
+
+  generateRandomNumber = () => {
+    const min = 1;
+    const max = 6;
+    setRandomNumber(Math.floor(Math.random() * (max - min + 1)) + min)
+  };
+
   return (
     <View style={styles.container}>
         <View style={styles.robotChatView}>
             <Image source={require('../assets/robo-alegre.png')} style={styles.homeImage}/>
             <View style={styles.robotSentencesView}> 
-                <Text style={styles.robotChatText}>Caps Lock Day{'\n'}Existe um "Dia do Caps Lock" celebrado em 22 de outubro. A ideia é dedicar um dia ao uso exagerado das maiúsculas na internet.</Text>
+                <Text style={styles.robotChatText}>{listaCuriosidades[randomNumber-1]}</Text>
             </View>
         </View>
         <View style={styles.robotChatView}>
             <View style={styles.robotSentencesView}>
                 <View style={styles.convView}>
                     <Text style={styles.continueText}>Ver outras curiosidades</Text>
-                    <TouchableOpacity><MaterialCommunityIcons name="send-circle" size={52} color="#47B9F5" /></TouchableOpacity>
+                    <TouchableOpacity onPress={this.generateRandomNumber}><MaterialCommunityIcons name="send-circle" size={52} color="#47B9F5" /></TouchableOpacity>
                 </View>
             </View>
         </View>
