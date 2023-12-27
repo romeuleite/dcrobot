@@ -13,6 +13,6 @@ import Colorconfig from './src/screens/Colorconfig';
 
 export default function App() {
   return (
-    <Home/>
+    <Mapa/>
   );
 };

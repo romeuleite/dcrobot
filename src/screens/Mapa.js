@@ -1,17 +1,48 @@
 import { StatusBar } from 'expo-status-bar';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
-import MapView from 'react-native-maps';
+import MapView, { Marker } from 'react-native-maps';
 import { MaterialCommunityIcons, Ionicons, FontAwesome, FontAwesome5, Foundation, Entypo } from '@expo/vector-icons';
+import * as Location from 'expo-location';
 
 const Mapa = () => {
-    return (
-        <View style={styles.container}>
-            <MapView style={styles.map} initialRegion={{
-                latitude: -21.979579406397583,
-                longitude: -47.88038067934134,
+    const [location, setLocation] = useState({
+        latitude: -21.979579406397583,
+        longitude: -47.88038067934134,
+        latitudeDelta: 0.0922,
+        longitudeDelta: 0.0421,
+    });
+
+    useEffect(() => {
+        (async () => {
+
+            let { status } = await Location.requestForegroundPermissionsAsync();
+            if (status !== 'granted') {
+                setErrorMsg('Permission to access location was denied');
+                return;
+            }
+
+            let location = await Location.getCurrentPositionAsync({});
+            setLocation({
+                latitude: location.coords.latitude,
+                longitude: location.coords.longitude,
                 latitudeDelta: 0.0922,
                 longitudeDelta: 0.0421,
-            }} />
+            }
+            );
+        })();
+    }, []);
+
+    return (
+        <View style={styles.container}>
+            <MapView style={styles.map} region={{
+                latitude: location.latitude,
+                longitude: location.longitude,
+                latitudeDelta: location.latitudeDelta,
+                longitudeDelta: location.longitudeDelta,
+            }}>
+                <Marker coordinate={{"latitude":location.latitude,"longitude":location.longitude}}/>
+            </MapView>
             <TouchableOpacity style={styles.backButton}><FontAwesome name="long-arrow-left" size={32} color="#fff" /></TouchableOpacity>
             <View style={styles.sideBar}>
                 <TouchableOpacity style={styles.iconBox}><Ionicons name="settings-sharp" size={24} color="#fff" /></TouchableOpacity>
