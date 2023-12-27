@@ -2,10 +2,10 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View, TouchableOpacity} from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 
-const Backbutton = () => {
+const Backbutton = ({navigation}) => {
   return (
     <View style={styles.container}>
-        <TouchableOpacity style={styles.backButton}><FontAwesome name="long-arrow-left" size={32} color="#fff" /></TouchableOpacity>
+        <TouchableOpacity style={styles.backButton} onPress={navigation.goBack}><FontAwesome name="long-arrow-left" size={32} color="#fff" /></TouchableOpacity>
     </View>
   );
 }

@@ -1,22 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import { MaterialCommunityIcons, Ionicons, FontAwesome, FontAwesome5, Foundation, Entypo } from '@expo/vector-icons';
+import Leftnavmenu from '../components/Leftnavmenu';
 
-const Home = () => {
+const Home = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <Image source={require('../assets/robo-alegre.png')} style={styles.homeImage}/>
-      <TouchableOpacity style={styles.backButton}><FontAwesome name="long-arrow-left" size={32} color="#fff" /></TouchableOpacity>
-      <View style={styles.sideBar}>
-        <TouchableOpacity style={styles.iconBox}><Ionicons name="settings-sharp" size={24} color="#fff" /></TouchableOpacity>
-        <TouchableOpacity style={styles.iconBox}><FontAwesome5 name="info" size={24} color="#fff" /></TouchableOpacity>
-        <TouchableOpacity style={styles.iconBox}><Ionicons name="cloud" size={24} color="#fff" /></TouchableOpacity>
-        <TouchableOpacity style={styles.iconBox}><Foundation name="map" size={24} color="#fff" /></TouchableOpacity>
-        <TouchableOpacity style={styles.iconBox}><Entypo name="home" size={24} color="#fff" /></TouchableOpacity>
+      <Image source={require('../assets/robo-alegre.png')} style={styles.homeImage} />
+      <View style={styles.leftMenu}>
+        <Leftnavmenu navigation={navigation} />
       </View>
       <View style={styles.startConvView}>
         <Text style={styles.introText}>Olá, vamos conversar?</Text>
-        <TouchableOpacity><MaterialCommunityIcons name="send-circle" size={48} color="#47B9F5" /></TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('Conversa')}><MaterialCommunityIcons name="send-circle" size={48} color="#47B9F5" /></TouchableOpacity>
       </View>
       <StatusBar style="auto" />
     </View>
@@ -30,7 +26,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  startConvView:{
+  startConvView: {
     gap: 10,
     flexDirection: 'row',
     //alignContent: 'space-between',
@@ -39,24 +35,16 @@ const styles = StyleSheet.create({
   },
   homeImage: {
     resizeMode: 'contain',
-    width:150,
-    height:220,
+    width: 150,
+    height: 220,
   },
-  introText:{
+  introText: {
     fontSize: 32,
   },
-  sideBar:{
-    backgroundColor: "#195AA5",
-    borderRadius: 10,
+  leftMenu: {
     position: 'absolute',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: 8,
-    width:60,
-    height:250,
-    left: 20,
-    bottom: 30,
+    left: 0,
+    bottom: 0,
   },
   iconBox: {
     backgroundColor: "#47B9F5",
@@ -66,18 +54,6 @@ const styles = StyleSheet.create({
     height: 40,
     borderRadius: 10,
   },
-  backButton: {
-    backgroundColor: "#195AA5",
-    position: 'absolute',
-    left: 0,
-    top: 30,
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: 90,
-    height: 30,
-    borderTopRightRadius: 20,
-    borderBottomRightRadius: 20,
-  }
 });
 
 export default Home

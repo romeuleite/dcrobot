@@ -5,11 +5,11 @@ import { MaterialCommunityIcons, Ionicons, FontAwesome, FontAwesome5, Foundation
 import Backbutton from './Backbutton';
 import Sidebar from './Sidebar';
 
-const Leftnavmenu = () => {
+const Leftnavmenu = ({navigation}) => {
   return (
     <View style={styles.container}>
-        <Backbutton/>
-        <Sidebar/>
+        <Backbutton navigation={navigation}/>
+        <Sidebar navigation={navigation}/>
     </View>
   );
 }

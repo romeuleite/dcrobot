@@ -6,7 +6,7 @@ import Leftnavmenu from '../components/Leftnavmenu';
 import Backbutton from '../components/Backbutton';
 import { Colors } from '../colors/Colors';
 
-const Colorconfig = () => {
+const Colorconfig = ({navigation}) => {
     return (
         <View style={styles.container}>
             <View flexDirection={'row'} marginBottom={20} alignItems={'center'} gap={5}>
@@ -54,7 +54,7 @@ const Colorconfig = () => {
                 </View>
             </ScrollView>
             <View style={styles.leftMenu}>
-                <Backbutton />
+                <Backbutton navigation={navigation}/>
             </View>
             <StatusBar style="auto" />
         </View>

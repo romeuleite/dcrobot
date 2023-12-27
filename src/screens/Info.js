@@ -4,7 +4,7 @@ import { FontAwesome5 } from '@expo/vector-icons';
 
 import Leftnavmenu from '../components/Leftnavmenu';
 
-const Info = () => {
+const Info = ({navigation}) => {
     return (
         <View style={styles.container}>
             <View flexDirection={'row'} margin={20} alignItems={'center'} gap={5}>
@@ -19,7 +19,7 @@ const Info = () => {
                 <Image source={require('../assets/logo-dc.png')} style={styles.dcImage} />
             </View>
             <View style={styles.leftMenu}>
-                <Leftnavmenu />
+                <Leftnavmenu navigation={navigation}/>
             </View>
             <StatusBar style="auto" />
         </View>

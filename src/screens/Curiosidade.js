@@ -6,7 +6,7 @@ import { listaCuriosidades } from '../utilities/listaCuriosidades';
 
 import Leftnavmenu from '../components/Leftnavmenu';
 
-const Curiosidade = () => {
+const Curiosidade = ({navigation}) => {
   const [randomNumber, setRandomNumber] = useState(1)
 
   generateRandomNumber = () => {
@@ -32,7 +32,7 @@ const Curiosidade = () => {
             </View>
         </View>
         <View style={styles.leftMenu}>
-            <Leftnavmenu/>
+            <Leftnavmenu navigation={navigation}/>
         </View>
       <StatusBar style="auto" />
     </View>

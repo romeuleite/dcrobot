@@ -1,15 +1,15 @@
 import { StyleSheet, View, TouchableOpacity} from 'react-native';
 import { Ionicons, FontAwesome5, Foundation, Entypo } from '@expo/vector-icons';
 
-const Sidebar = () => {
+const Sidebar = ({navigation}) => {
   return (
     <View style={styles.container}>
         <View style={styles.sideBar}>
-            <TouchableOpacity style={styles.iconBox}><Ionicons name="settings-sharp" size={24} color="#fff" /></TouchableOpacity>
-            <TouchableOpacity style={styles.iconBox}><FontAwesome5 name="info" size={24} color="#fff" /></TouchableOpacity>
-            <TouchableOpacity style={styles.iconBox}><Ionicons name="cloud" size={24} color="#fff" /></TouchableOpacity>
-            <TouchableOpacity style={styles.iconBox}><Foundation name="map" size={24} color="#fff" /></TouchableOpacity>
-            <TouchableOpacity style={styles.iconBox}><Entypo name="home" size={24} color="#fff" /></TouchableOpacity>
+            <TouchableOpacity style={styles.iconBox} onPress={() => navigation.navigate('Colorconfig')}><Ionicons name="settings-sharp" size={24} color="#fff" /></TouchableOpacity>
+            <TouchableOpacity style={styles.iconBox} onPress={() => navigation.navigate('Info')}><FontAwesome5 name="info" size={24} color="#fff" /></TouchableOpacity>
+            <TouchableOpacity style={styles.iconBox} onPress={() => navigation.navigate('Clima')}><Ionicons name="cloud" size={24} color="#fff" /></TouchableOpacity>
+            <TouchableOpacity style={styles.iconBox} onPress={() => navigation.navigate('Mapa')}><Foundation name="map" size={24} color="#fff" /></TouchableOpacity>
+            <TouchableOpacity style={styles.iconBox} onPress={() => navigation.navigate('Home')}><Entypo name="home" size={24} color="#fff" /></TouchableOpacity>
         </View>
     </View>
   );
