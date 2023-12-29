@@ -1,4 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity, FlatList, ScrollView } from 'react-native';
 import { MaterialCommunityIcons, Feather, Ionicons } from '@expo/vector-icons';
 
@@ -6,7 +7,9 @@ import Leftnavmenu from '../components/Leftnavmenu';
 import Backbutton from '../components/Backbutton';
 import { Colors } from '../colors/Colors';
 
-const Colorconfig = ({navigation}) => {
+const Colorconfig = ({ navigation }) => {
+    const [colorChange, setColorChange] = useState(1);
+
     return (
         <View style={styles.container}>
             <View flexDirection={'row'} marginBottom={20} alignItems={'center'} gap={5}>
@@ -18,7 +21,9 @@ const Colorconfig = ({navigation}) => {
             <ScrollView showsVerticalScrollIndicator={false}>
                 <Text style={styles.colorTitleText}>Padrão</Text>
                 <View style={styles.colorBlindView}>
-                    <Feather name="circle" size={24} color="black" marginRight={30} />
+                    <TouchableOpacity onPress={() => setColorChange(1)}>
+                        <Feather name="circle" size={24} color="black" marginRight={30} />
+                    </TouchableOpacity>
                     <View style={styles.colorSquare} backgroundColor={Colors.primaryDefault} />
                     <View style={styles.colorSquare} backgroundColor={Colors.secondaryDefault} />
                     <View style={styles.colorSquare} backgroundColor={Colors.lightgrayDefault} />
@@ -27,7 +32,9 @@ const Colorconfig = ({navigation}) => {
                 </View>
                 <Text style={styles.colorTitleText}>Protanopia</Text>
                 <View style={styles.colorBlindView}>
-                    <Feather name="circle" size={24} color="black" marginRight={30} />
+                    <TouchableOpacity onPress={() => setColorChange(2)}>
+                        <Feather name="circle" size={24} color="black" marginRight={30} />
+                    </TouchableOpacity>
                     <View style={styles.colorSquare} backgroundColor={Colors.primaryProtanopia} />
                     <View style={styles.colorSquare} backgroundColor={Colors.secondaryProtanopia} />
                     <View style={styles.colorSquare} backgroundColor={Colors.lightgrayDefault} />
@@ -36,7 +43,9 @@ const Colorconfig = ({navigation}) => {
                 </View>
                 <Text style={styles.colorTitleText}>Deuteranopia</Text>
                 <View style={styles.colorBlindView}>
-                    <Feather name="circle" size={24} color="black" marginRight={30} />
+                    <TouchableOpacity onPress={() => setColorChange(3)}>
+                        <Feather name="circle" size={24} color="black" marginRight={30} />
+                    </TouchableOpacity>
                     <View style={styles.colorSquare} backgroundColor={Colors.primaryDeuteranopia} />
                     <View style={styles.colorSquare} backgroundColor={Colors.secondaryDeuteranopia} />
                     <View style={styles.colorSquare} backgroundColor={Colors.lightgrayDefault} />
@@ -45,7 +54,9 @@ const Colorconfig = ({navigation}) => {
                 </View>
                 <Text style={styles.colorTitleText}>Tritanopia</Text>
                 <View style={styles.colorBlindView}>
-                    <Feather name="circle" size={24} color="black" marginRight={30} />
+                    <TouchableOpacity onPress={() => setColorChange(4)}>
+                        <Feather name="circle" size={24} color="black" marginRight={30} />
+                    </TouchableOpacity>
                     <View style={styles.colorSquare} backgroundColor={Colors.primaryTritanopia} />
                     <View style={styles.colorSquare} backgroundColor={Colors.secondaryTritanopia} />
                     <View style={styles.colorSquare} backgroundColor={Colors.lightgrayDefault} />
@@ -54,7 +65,7 @@ const Colorconfig = ({navigation}) => {
                 </View>
             </ScrollView>
             <View style={styles.leftMenu}>
-                <Backbutton navigation={navigation}/>
+                <Backbutton navigation={navigation} />
             </View>
             <StatusBar style="auto" />
         </View>
@@ -83,7 +94,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'flex-start',
     },
-    colorCorrectionText:{
+    colorCorrectionText: {
         fontSize: 16,
         textAlign: 'left',
         width: 580,
