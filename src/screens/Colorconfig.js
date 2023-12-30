@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity, FlatList, ScrollView } from 'react-native';
-import { MaterialCommunityIcons, Feather, Ionicons } from '@expo/vector-icons';
+import { MaterialCommunityIcons, Feather, Ionicons, FontAwesome } from '@expo/vector-icons';
 
 import Leftnavmenu from '../components/Leftnavmenu';
 import Backbutton from '../components/Backbutton';
@@ -22,7 +22,7 @@ const Colorconfig = ({ navigation }) => {
                 <Text style={styles.colorTitleText}>Padrão</Text>
                 <View style={styles.colorBlindView}>
                     <TouchableOpacity onPress={() => setColorChange(1)}>
-                        <Feather name="circle" size={24} color="black" marginRight={30} />
+                        <FontAwesome name={colorChange === 1 ? "dot-circle-o" : "circle-o"} size={24} color="black" marginRight={30} />
                     </TouchableOpacity>
                     <View style={styles.colorSquare} backgroundColor={Colors.primaryDefault} />
                     <View style={styles.colorSquare} backgroundColor={Colors.secondaryDefault} />
@@ -33,7 +33,7 @@ const Colorconfig = ({ navigation }) => {
                 <Text style={styles.colorTitleText}>Protanopia</Text>
                 <View style={styles.colorBlindView}>
                     <TouchableOpacity onPress={() => setColorChange(2)}>
-                        <Feather name="circle" size={24} color="black" marginRight={30} />
+                    <FontAwesome name={colorChange === 2 ? "dot-circle-o" : "circle-o"} size={24} color="black" marginRight={30} />
                     </TouchableOpacity>
                     <View style={styles.colorSquare} backgroundColor={Colors.primaryProtanopia} />
                     <View style={styles.colorSquare} backgroundColor={Colors.secondaryProtanopia} />
@@ -44,7 +44,7 @@ const Colorconfig = ({ navigation }) => {
                 <Text style={styles.colorTitleText}>Deuteranopia</Text>
                 <View style={styles.colorBlindView}>
                     <TouchableOpacity onPress={() => setColorChange(3)}>
-                        <Feather name="circle" size={24} color="black" marginRight={30} />
+                    <FontAwesome name={colorChange === 3 ? "dot-circle-o" : "circle-o"} size={24} color="black" marginRight={30} />
                     </TouchableOpacity>
                     <View style={styles.colorSquare} backgroundColor={Colors.primaryDeuteranopia} />
                     <View style={styles.colorSquare} backgroundColor={Colors.secondaryDeuteranopia} />
@@ -55,7 +55,7 @@ const Colorconfig = ({ navigation }) => {
                 <Text style={styles.colorTitleText}>Tritanopia</Text>
                 <View style={styles.colorBlindView}>
                     <TouchableOpacity onPress={() => setColorChange(4)}>
-                        <Feather name="circle" size={24} color="black" marginRight={30} />
+                    <FontAwesome name={colorChange === 4 ? "dot-circle-o" : "circle-o"} size={24} color="black" marginRight={30} />
                     </TouchableOpacity>
                     <View style={styles.colorSquare} backgroundColor={Colors.primaryTritanopia} />
                     <View style={styles.colorSquare} backgroundColor={Colors.secondaryTritanopia} />
