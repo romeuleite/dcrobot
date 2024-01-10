@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
   leftMenu: {
     position: 'absolute',
     left: 0,
-    bottom: 0,
+    top: 40,
   },
 });
 

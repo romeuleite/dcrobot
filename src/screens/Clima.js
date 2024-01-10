@@ -7,7 +7,7 @@ import { MaterialCommunityIcons, Ionicons, FontAwesome, FontAwesome5, Foundation
 
 import Leftnavmenu from '../components/Leftnavmenu';
 
-const Clima = ({navigation}) => {
+const Clima = ({ navigation }) => {
     //const [loading, error, weather] = useGetWeather()
 
     // if (weather && weather.list && !loading) {
@@ -52,8 +52,8 @@ const styles = StyleSheet.create({
     leftMenu: {
         position: 'absolute',
         left: 0,
-        bottom: 0,
-    },
+        top: 40,
+      },
 });
 
 export default Clima

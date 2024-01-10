@@ -33,7 +33,7 @@ const Colorconfig = ({ navigation }) => {
                 <Text style={styles.colorTitleText}>Protanopia</Text>
                 <View style={styles.colorBlindView}>
                     <TouchableOpacity onPress={() => setColorChange(2)}>
-                    <FontAwesome name={colorChange === 2 ? "dot-circle-o" : "circle-o"} size={24} color="black" marginRight={30} />
+                        <FontAwesome name={colorChange === 2 ? "dot-circle-o" : "circle-o"} size={24} color="black" marginRight={30} />
                     </TouchableOpacity>
                     <View style={styles.colorSquare} backgroundColor={Colors.primaryProtanopia} />
                     <View style={styles.colorSquare} backgroundColor={Colors.secondaryProtanopia} />
@@ -44,7 +44,7 @@ const Colorconfig = ({ navigation }) => {
                 <Text style={styles.colorTitleText}>Deuteranopia</Text>
                 <View style={styles.colorBlindView}>
                     <TouchableOpacity onPress={() => setColorChange(3)}>
-                    <FontAwesome name={colorChange === 3 ? "dot-circle-o" : "circle-o"} size={24} color="black" marginRight={30} />
+                        <FontAwesome name={colorChange === 3 ? "dot-circle-o" : "circle-o"} size={24} color="black" marginRight={30} />
                     </TouchableOpacity>
                     <View style={styles.colorSquare} backgroundColor={Colors.primaryDeuteranopia} />
                     <View style={styles.colorSquare} backgroundColor={Colors.secondaryDeuteranopia} />
@@ -55,7 +55,7 @@ const Colorconfig = ({ navigation }) => {
                 <Text style={styles.colorTitleText}>Tritanopia</Text>
                 <View style={styles.colorBlindView}>
                     <TouchableOpacity onPress={() => setColorChange(4)}>
-                    <FontAwesome name={colorChange === 4 ? "dot-circle-o" : "circle-o"} size={24} color="black" marginRight={30} />
+                        <FontAwesome name={colorChange === 4 ? "dot-circle-o" : "circle-o"} size={24} color="black" marginRight={30} />
                     </TouchableOpacity>
                     <View style={styles.colorSquare} backgroundColor={Colors.primaryTritanopia} />
                     <View style={styles.colorSquare} backgroundColor={Colors.secondaryTritanopia} />
@@ -82,8 +82,8 @@ const styles = StyleSheet.create({
     leftMenu: {
         position: 'absolute',
         left: 0,
-        bottom: 0,
-    },
+        top: 40,
+      },
     colorTitleText: {
         textAlign: 'center',
         marginTop: 20,

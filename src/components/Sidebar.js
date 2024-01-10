@@ -1,5 +1,7 @@
-import { StyleSheet, View, TouchableOpacity} from 'react-native';
+import { StyleSheet, View, TouchableOpacity, Dimensions} from 'react-native';
 import { Ionicons, FontAwesome5, Foundation, Entypo } from '@expo/vector-icons';
+
+const windowHeight = Dimensions.get('window').height;
 
 const Sidebar = ({navigation}) => {
   return (
@@ -18,19 +20,16 @@ const Sidebar = ({navigation}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    marginLeft: 20,
   },
   sideBar:{
     backgroundColor: "#195AA5",
     borderRadius: 10,
     flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'center',
-    gap: 8,
+    justifyContent: 'space-around',
     width:60,
-    height:250,
-    position: 'absolute',
-    left: 20,
-    bottom: 30,
+    height: windowHeight * 0.7,
   },
   iconBox: {
     backgroundColor: "#47B9F5",

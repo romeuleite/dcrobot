@@ -13,6 +13,7 @@ const Backbutton = ({navigation}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    marginBottom: '5%'
   },
   backButton: {
     backgroundColor: "#195AA5",
@@ -22,8 +23,6 @@ const styles = StyleSheet.create({
     height: 30,
     borderTopRightRadius: 20,
     borderBottomRightRadius: 20,
-    position: 'absolute',
-    bottom: 300,
   }
 });
 

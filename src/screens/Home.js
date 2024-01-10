@@ -6,7 +6,7 @@ import Leftnavmenu from '../components/Leftnavmenu';
 const Home = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <Image source={require('../assets/robo-alegre.png')} style={styles.homeImage} />
+      <Image source={require('../assets/robo-home.png')} style={styles.homeImage} />
       <View style={styles.leftMenu}>
         <Leftnavmenu navigation={navigation} />
       </View>
@@ -35,8 +35,8 @@ const styles = StyleSheet.create({
   },
   homeImage: {
     resizeMode: 'contain',
-    width: 150,
-    height: 220,
+    width: '60%',
+    height: '60%',
   },
   introText: {
     fontSize: 32,
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
   leftMenu: {
     position: 'absolute',
     left: 0,
-    bottom: 0,
+    top: 40,
   },
   iconBox: {
     backgroundColor: "#47B9F5",

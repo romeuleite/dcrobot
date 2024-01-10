@@ -4,7 +4,7 @@ import { FontAwesome5 } from '@expo/vector-icons';
 
 import Leftnavmenu from '../components/Leftnavmenu';
 
-const Info = ({navigation}) => {
+const Info = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <View flexDirection={'row'} margin={20} alignItems={'center'} gap={5}>
@@ -19,7 +19,7 @@ const Info = ({navigation}) => {
                 <Image source={require('../assets/logo-dc.png')} style={styles.dcImage} />
             </View>
             <View style={styles.leftMenu}>
-                <Leftnavmenu navigation={navigation}/>
+                <Leftnavmenu navigation={navigation} />
             </View>
             <StatusBar style="auto" />
         </View>
@@ -53,8 +53,8 @@ const styles = StyleSheet.create({
     leftMenu: {
         position: 'absolute',
         left: 0,
-        bottom: 0,
-    },
+        top: 40,
+      },
 });
 
 export default Info

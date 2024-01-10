@@ -1,12 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { listaCuriosidades } from '../utilities/listaCuriosidades';
 
 import Leftnavmenu from '../components/Leftnavmenu';
 
-const Curiosidade = ({navigation}) => {
+const Curiosidade = ({ navigation }) => {
   const [randomNumber, setRandomNumber] = useState(1)
 
   generateRandomNumber = () => {
@@ -17,23 +17,23 @@ const Curiosidade = ({navigation}) => {
 
   return (
     <View style={styles.container}>
-        <View style={styles.robotChatView}>
-            <Image source={require('../assets/robo-alegre.png')} style={styles.homeImage}/>
-            <View style={styles.robotSentencesView}> 
-                <Text style={styles.robotChatText}>{listaCuriosidades[randomNumber-1]}</Text>
-            </View>
+      <View style={styles.robotChatView}>
+        <Image source={require('../assets/robo-alegre.png')} style={styles.homeImage} />
+        <View style={styles.robotSentencesView}>
+          <Text style={styles.robotChatText}>{listaCuriosidades[randomNumber - 1]}</Text>
         </View>
-        <View style={styles.robotChatView}>
-            <View style={styles.robotSentencesView}>
-                <View style={styles.convView}>
-                    <Text style={styles.continueText}>Ver outras curiosidades</Text>
-                    <TouchableOpacity onPress={this.generateRandomNumber}><MaterialCommunityIcons name="send-circle" size={52} color="#47B9F5" /></TouchableOpacity>
-                </View>
-            </View>
+      </View>
+      <View style={styles.robotChatView}>
+        <View style={styles.robotSentencesView}>
+          <View style={styles.convView}>
+            <Text style={styles.continueText}>Ver outras curiosidades</Text>
+            <TouchableOpacity onPress={this.generateRandomNumber}><MaterialCommunityIcons name="send-circle" size={52} color="#47B9F5" /></TouchableOpacity>
+          </View>
         </View>
-        <View style={styles.leftMenu}>
-            <Leftnavmenu navigation={navigation}/>
-        </View>
+      </View>
+      <View style={styles.leftMenu}>
+        <Leftnavmenu navigation={navigation} />
+      </View>
       <StatusBar style="auto" />
     </View>
   );
@@ -47,12 +47,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     gap: 20,
   },
-  robotChatView:{
+  robotChatView: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
   },
-  robotSentencesView:{
+  robotSentencesView: {
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
@@ -67,17 +67,17 @@ const styles = StyleSheet.create({
     textAlignVertical: 'center',
     textAlign: 'left',
   },
-  convView:{
+  convView: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
   },
   homeImage: {
     resizeMode: 'contain',
-    width:100,
-    height:120,
+    width: 100,
+    height: 120,
   },
-  continueText:{
+  continueText: {
     fontSize: 18,
     backgroundColor: '#47B9F5',
     color: 'white',
@@ -88,10 +88,10 @@ const styles = StyleSheet.create({
     textAlignVertical: 'center',
     textAlign: 'left',
   },
-  leftMenu:{
+  leftMenu: {
     position: 'absolute',
     left: 0,
-    bottom: 0,
+    top: 40,
   },
 });
 
