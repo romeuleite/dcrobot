@@ -10,7 +10,7 @@ const lightgrayDefault = '#ECECEC'
 const grayDefault = '#323232'
 const blackDefault = '#000000'
 
-const ColorManager = ({ colorBlindness }) => {
+function ColorManager(colorBlindness) {
     const [primaryColor, setPrimaryColor] = useState('#195AA5')
     const [secondaryColor, setSecondaryColor] = useState('#195AA5')
 
@@ -29,7 +29,7 @@ const ColorManager = ({ colorBlindness }) => {
         lightgrayDefault,
         grayDefault,
         blackDefault
-    ]
+    ];
 
 }
 

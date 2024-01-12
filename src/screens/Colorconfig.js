@@ -7,6 +7,7 @@ import Leftnavmenu from '../components/Leftnavmenu';
 import Backbutton from '../components/Backbutton';
 import { Colors } from '../colors/Colors';
 
+
 const Colorconfig = ({ navigation }) => {
     const [colorChange, setColorChange] = useState(1);
 
@@ -24,44 +25,44 @@ const Colorconfig = ({ navigation }) => {
                     <TouchableOpacity onPress={() => setColorChange(1)}>
                         <FontAwesome name={colorChange === 1 ? "dot-circle-o" : "circle-o"} size={24} color="black" marginRight={30} />
                     </TouchableOpacity>
-                    <View style={styles.colorSquare} backgroundColor={Colors.primaryDefault} />
-                    <View style={styles.colorSquare} backgroundColor={Colors.secondaryDefault} />
-                    <View style={styles.colorSquare} backgroundColor={Colors.lightgrayDefault} />
-                    <View style={styles.colorSquare} backgroundColor={Colors.grayDefault} />
-                    <View style={styles.colorSquare} backgroundColor={Colors.blackDefault} />
+                    <View style={styles.colorSquare} backgroundColor={Colors.default.primary} />
+                    <View style={styles.colorSquare} backgroundColor={Colors.default.secondary} />
+                    <View style={styles.colorSquare} backgroundColor={Colors.default.lightgray} />
+                    <View style={styles.colorSquare} backgroundColor={Colors.default.gray} />
+                    <View style={styles.colorSquare} backgroundColor={Colors.default.black} />
                 </View>
                 <Text style={styles.colorTitleText}>Protanopia</Text>
                 <View style={styles.colorBlindView}>
                     <TouchableOpacity onPress={() => setColorChange(2)}>
                         <FontAwesome name={colorChange === 2 ? "dot-circle-o" : "circle-o"} size={24} color="black" marginRight={30} />
                     </TouchableOpacity>
-                    <View style={styles.colorSquare} backgroundColor={Colors.primaryProtanopia} />
-                    <View style={styles.colorSquare} backgroundColor={Colors.secondaryProtanopia} />
-                    <View style={styles.colorSquare} backgroundColor={Colors.lightgrayDefault} />
-                    <View style={styles.colorSquare} backgroundColor={Colors.grayDefault} />
-                    <View style={styles.colorSquare} backgroundColor={Colors.blackDefault} />
+                    <View style={styles.colorSquare} backgroundColor={Colors.protanopia.primary} />
+                    <View style={styles.colorSquare} backgroundColor={Colors.protanopia.secondary} />
+                    <View style={styles.colorSquare} backgroundColor={Colors.protanopia.lightgray} />
+                    <View style={styles.colorSquare} backgroundColor={Colors.protanopia.gray} />
+                    <View style={styles.colorSquare} backgroundColor={Colors.protanopia.black} />
                 </View>
                 <Text style={styles.colorTitleText}>Deuteranopia</Text>
                 <View style={styles.colorBlindView}>
                     <TouchableOpacity onPress={() => setColorChange(3)}>
                         <FontAwesome name={colorChange === 3 ? "dot-circle-o" : "circle-o"} size={24} color="black" marginRight={30} />
                     </TouchableOpacity>
-                    <View style={styles.colorSquare} backgroundColor={Colors.primaryDeuteranopia} />
-                    <View style={styles.colorSquare} backgroundColor={Colors.secondaryDeuteranopia} />
-                    <View style={styles.colorSquare} backgroundColor={Colors.lightgrayDefault} />
-                    <View style={styles.colorSquare} backgroundColor={Colors.grayDefault} />
-                    <View style={styles.colorSquare} backgroundColor={Colors.blackDefault} />
+                    <View style={styles.colorSquare} backgroundColor={Colors.deuteranopia.primary} />
+                    <View style={styles.colorSquare} backgroundColor={Colors.deuteranopia.secondary} />
+                    <View style={styles.colorSquare} backgroundColor={Colors.deuteranopia.lightgray} />
+                    <View style={styles.colorSquare} backgroundColor={Colors.deuteranopia.gray} />
+                    <View style={styles.colorSquare} backgroundColor={Colors.deuteranopia.black} />
                 </View>
                 <Text style={styles.colorTitleText}>Tritanopia</Text>
                 <View style={styles.colorBlindView}>
                     <TouchableOpacity onPress={() => setColorChange(4)}>
                         <FontAwesome name={colorChange === 4 ? "dot-circle-o" : "circle-o"} size={24} color="black" marginRight={30} />
                     </TouchableOpacity>
-                    <View style={styles.colorSquare} backgroundColor={Colors.primaryTritanopia} />
-                    <View style={styles.colorSquare} backgroundColor={Colors.secondaryTritanopia} />
-                    <View style={styles.colorSquare} backgroundColor={Colors.lightgrayDefault} />
-                    <View style={styles.colorSquare} backgroundColor={Colors.grayDefault} />
-                    <View style={styles.colorSquare} backgroundColor={Colors.blackDefault} />
+                    <View style={styles.colorSquare} backgroundColor={Colors.tritanopia.primary} />
+                    <View style={styles.colorSquare} backgroundColor={Colors.tritanopia.secondary} />
+                    <View style={styles.colorSquare} backgroundColor={Colors.tritanopia.lightgray} />
+                    <View style={styles.colorSquare} backgroundColor={Colors.tritanopia.gray} />
+                    <View style={styles.colorSquare} backgroundColor={Colors.tritanopia.black} />
                 </View>
             </ScrollView>
             <View style={styles.leftMenu}>
