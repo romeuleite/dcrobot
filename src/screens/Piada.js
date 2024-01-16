@@ -1,9 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity, Dimensions } from 'react-native';
 import { MaterialCommunityIcons, Ionicons, FontAwesome, FontAwesome5, Foundation, Entypo } from '@expo/vector-icons';
 import { listaPiadas } from '../utilities/listaPiadas';
 import Leftnavmenu from '../components/Leftnavmenu';
+
+const windowHeight = Dimensions.get('window').height;
+const windowWidth = Dimensions.get('window').width;
 
 const Piada = ({ navigation }) => {
   const [randomNumber, setRandomNumber] = useState(1)
@@ -24,10 +27,12 @@ const Piada = ({ navigation }) => {
       </View>
       <View style={styles.robotChatView}>
         <View style={styles.robotSentencesView}>
+        <TouchableOpacity onPress={this.generateRandomNumber}>
           <View style={styles.convView}>
             <Text style={styles.continueText}>Contar outra piada</Text>
-            <TouchableOpacity onPress={this.generateRandomNumber}><MaterialCommunityIcons name="send-circle" size={52} color="#47B9F5" /></TouchableOpacity>
+            <MaterialCommunityIcons name="send-circle" size={52} color="#47B9F5" />
           </View>
+        </TouchableOpacity>
         </View>
       </View>
       <TouchableOpacity style={styles.backButton}><FontAwesome name="long-arrow-left" size={32} color="#fff" /></TouchableOpacity>
@@ -62,7 +67,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     backgroundColor: '#ECECEC',
     borderRadius: 10,
-    width: 280,
+    width: windowWidth * 0.4,
     margin: 5,
     padding: 10,
     textAlignVertical: 'center',
@@ -75,16 +80,16 @@ const styles = StyleSheet.create({
   },
   homeImage: {
     resizeMode: 'contain',
-    width: 100,
-    height: 120,
+    width: windowWidth*0.12,
+    height: windowHeight * 0.3,
   },
   continueText: {
-    fontSize: 18,
+    fontSize: windowHeight * 0.05,
     backgroundColor: '#47B9F5',
     color: 'white',
     borderRadius: 10,
-    width: 230,
-    height: 50,
+    width: windowWidth * 0.35,
+    height: windowHeight * 0.15,
     padding: 10,
     textAlignVertical: 'center',
     textAlign: 'left',

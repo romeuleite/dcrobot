@@ -1,14 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View, Text, Image } from 'react-native';
+import { StyleSheet, View, Text, Image, Dimensions } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
 
 import Leftnavmenu from '../components/Leftnavmenu';
+
+const windowHeight = Dimensions.get('window').height;
+const windowWidth = Dimensions.get('window').width;
 
 const Info = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <View flexDirection={'row'} margin={20} alignItems={'center'} gap={5}>
-                <FontAwesome5 name="info" size={24} color="black" />
+                <FontAwesome5 name="info" size={windowHeight * 0.05} color="black" />
                 <Text style={styles.infoTitleText}>Informações</Text>
             </View>
             <View width={500}>
@@ -34,16 +37,16 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     infoTitleText: {
-        fontSize: 20,
+        fontSize: windowHeight * 0.06,
         fontWeight: 'bold',
     },
     textTile: {
         color: '#3098E9',
-        fontSize: 20,
+        fontSize: windowHeight * 0.06,
         fontWeight: 'bold',
     },
     textDescription: {
-
+        fontSize: windowHeight * 0.035,
     },
     dcImage: {
         resizeMode: 'contain',

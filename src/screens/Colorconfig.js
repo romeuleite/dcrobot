@@ -1,11 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, Image, TouchableOpacity, FlatList, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity, FlatList, ScrollView, Dimensions } from 'react-native';
 import { MaterialCommunityIcons, Feather, Ionicons, FontAwesome } from '@expo/vector-icons';
 
 import Leftnavmenu from '../components/Leftnavmenu';
 import Backbutton from '../components/Backbutton';
 import { Colors } from '../colors/Colors';
+
+const windowHeight = Dimensions.get('window').height;
+const windowWidth = Dimensions.get('window').width;
 
 
 const Colorconfig = ({ navigation }) => {
@@ -96,12 +99,12 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-start',
     },
     colorCorrectionText: {
-        fontSize: 16,
+        fontSize: windowHeight * 0.04,
         textAlign: 'left',
         width: 580,
     },
     configTitleText: {
-        fontSize: 20,
+        fontSize: windowHeight * 0.06,
         fontWeight: 'bold',
     },
     colorSquare: {

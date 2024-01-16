@@ -1,7 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity, Dimensions } from 'react-native';
 import { MaterialCommunityIcons, Ionicons, FontAwesome, FontAwesome5, Foundation, Entypo } from '@expo/vector-icons';
 import Leftnavmenu from '../components/Leftnavmenu';
+
+const windowHeight = Dimensions.get('window').height;
+const windowWidth = Dimensions.get('window').width;
 
 const Conversa = ({ navigation }) => {
   return (
@@ -14,7 +17,7 @@ const Conversa = ({ navigation }) => {
         </View>
       </View>
       <View style={styles.robotChatView}>
-        <Ionicons name="person" size={100} color="black" />
+        <Ionicons name="person" size={windowWidth*0.12} color="black" />
         <View style={styles.robotSentencesView}>
           <View style={styles.convView}>
             <Text style={styles.continueText}>Continuar conversa</Text>
@@ -22,10 +25,10 @@ const Conversa = ({ navigation }) => {
           </View>
           <View flexDirection={'row'}>
             <TouchableOpacity onPress={() => navigation.navigate('Piada')}>
-              <Text style={styles.robotChatText} width={135}>Contar piada</Text>
+              <Text style={styles.robotChatText} width={windowWidth*0.2}>Contar piada</Text>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => navigation.navigate('Curiosidade')}>
-              <Text style={styles.robotChatText} width={135}>Ver curiosidades</Text>
+              <Text style={styles.robotChatText} width={windowWidth*0.2}>Ver curiosidades</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -46,7 +49,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     gap: 50,
-    paddingTop: 80,
+    paddingTop: windowWidth *0.1,
   },
   robotChatView: {
     flexDirection: 'row',
@@ -61,12 +64,13 @@ const styles = StyleSheet.create({
   robotChatText: {
     backgroundColor: '#ECECEC',
     borderRadius: 10,
-    width: 280,
-    height: 50,
+    width: windowWidth * 0.4,
+    height: windowHeight * 0.15,
     margin: 5,
     padding: 10,
     textAlignVertical: 'center',
     textAlign: 'left',
+    fontSize: windowHeight * 0.04,
   },
   convView: {
     flexDirection: 'row',
@@ -75,16 +79,16 @@ const styles = StyleSheet.create({
   },
   homeImage: {
     resizeMode: 'contain',
-    width: 100,
+    width: windowWidth*0.12,
     height: 120,
   },
   continueText: {
-    fontSize: 18,
+    fontSize: windowHeight * 0.05,
     backgroundColor: '#47B9F5',
     color: 'white',
     borderRadius: 10,
-    width: 230,
-    height: 50,
+    width: windowWidth * 0.35,
+    height: windowHeight * 0.15,
     padding: 10,
     textAlignVertical: 'center',
     textAlign: 'left',
