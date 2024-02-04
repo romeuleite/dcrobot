@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   robotChatText: {
-    fontSize: 24,
+    fontSize: windowHeight * 0.04,
     backgroundColor: '#ECECEC',
     borderRadius: 10,
     width: windowWidth * 0.4,

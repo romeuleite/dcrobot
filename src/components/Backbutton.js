@@ -1,11 +1,21 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View, TouchableOpacity} from 'react-native';
+import { StyleSheet, View, TouchableOpacity } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
+import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
-const Backbutton = ({navigation}) => {
+const Backbutton = ({ navigation }) => {
+  const primaryColor = useSelector(state => state.primaryColor);
+  const secondaryColor = useSelector(state => state.secondaryColor);
+  const dispatch = useDispatch();
+
   return (
     <View style={styles.container}>
-        <TouchableOpacity style={styles.backButton} onPress={navigation.goBack}><FontAwesome name="long-arrow-left" size={32} color="#fff" /></TouchableOpacity>
+      <TouchableOpacity onPress={navigation.goBack}>
+        <View style={styles.backButton} backgroundColor={primaryColor}>
+          <FontAwesome name="long-arrow-left" size={32} color="#fff" />
+        </View>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -16,7 +26,6 @@ const styles = StyleSheet.create({
     marginBottom: '5%'
   },
   backButton: {
-    backgroundColor: "#195AA5",
     alignItems: 'center',
     justifyContent: 'center',
     width: 90,

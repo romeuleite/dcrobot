@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { StyleSheet, Text, View, Image, TouchableOpacity, FlatList, ScrollView, Dimensions } from 'react-native';
 import { MaterialCommunityIcons, Feather, Ionicons, FontAwesome } from '@expo/vector-icons';
 
@@ -13,6 +14,9 @@ const windowWidth = Dimensions.get('window').width;
 
 const Colorconfig = ({ navigation }) => {
     const [colorChange, setColorChange] = useState(1);
+    const primaryColor = useSelector(state => state.primaryColor);
+    const secondaryColor = useSelector(state => state.secondaryColor);
+    const dispatch = useDispatch();
 
     return (
         <View style={styles.container}>
@@ -25,7 +29,7 @@ const Colorconfig = ({ navigation }) => {
             <ScrollView showsVerticalScrollIndicator={false}>
                 <Text style={styles.colorTitleText}>Padrão</Text>
                 <View style={styles.colorBlindView}>
-                    <TouchableOpacity onPress={() => setColorChange(1)}>
+                    <TouchableOpacity onPress={() => {setColorChange(1); dispatch({type: 'DEFAULT'})}}>
                         <FontAwesome name={colorChange === 1 ? "dot-circle-o" : "circle-o"} size={24} color="black" marginRight={30} />
                     </TouchableOpacity>
                     <View style={styles.colorSquare} backgroundColor={Colors.default.primary} />
@@ -36,7 +40,7 @@ const Colorconfig = ({ navigation }) => {
                 </View>
                 <Text style={styles.colorTitleText}>Protanopia</Text>
                 <View style={styles.colorBlindView}>
-                    <TouchableOpacity onPress={() => setColorChange(2)}>
+                    <TouchableOpacity onPress={() => {setColorChange(2); dispatch({type: 'PROTANOPIA'})}}>
                         <FontAwesome name={colorChange === 2 ? "dot-circle-o" : "circle-o"} size={24} color="black" marginRight={30} />
                     </TouchableOpacity>
                     <View style={styles.colorSquare} backgroundColor={Colors.protanopia.primary} />
@@ -47,7 +51,7 @@ const Colorconfig = ({ navigation }) => {
                 </View>
                 <Text style={styles.colorTitleText}>Deuteranopia</Text>
                 <View style={styles.colorBlindView}>
-                    <TouchableOpacity onPress={() => setColorChange(3)}>
+                    <TouchableOpacity onPress={() => {setColorChange(3); dispatch({type: 'DEUTERANOPIA'})}}>
                         <FontAwesome name={colorChange === 3 ? "dot-circle-o" : "circle-o"} size={24} color="black" marginRight={30} />
                     </TouchableOpacity>
                     <View style={styles.colorSquare} backgroundColor={Colors.deuteranopia.primary} />
@@ -58,7 +62,7 @@ const Colorconfig = ({ navigation }) => {
                 </View>
                 <Text style={styles.colorTitleText}>Tritanopia</Text>
                 <View style={styles.colorBlindView}>
-                    <TouchableOpacity onPress={() => setColorChange(4)}>
+                    <TouchableOpacity onPress={() => {setColorChange(4); dispatch({type: 'TRITANOPIA'})}}>
                         <FontAwesome name={colorChange === 4 ? "dot-circle-o" : "circle-o"} size={24} color="black" marginRight={30} />
                     </TouchableOpacity>
                     <View style={styles.colorSquare} backgroundColor={Colors.tritanopia.primary} />

@@ -1,10 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity, Dimensions, ScrollView } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
 import { MaterialCommunityIcons, Ionicons, FontAwesome, FontAwesome5, Foundation, Entypo } from '@expo/vector-icons';
 import * as Location from 'expo-location';
 import Leftnavmenu from '../components/Leftnavmenu';
+
+const windowHeight = Dimensions.get('window').height;
+const windowWidth = Dimensions.get('window').width;
 
 const Mapa = ({ navigation }) => {
     const [location, setLocation] = useState({
@@ -36,6 +39,7 @@ const Mapa = ({ navigation }) => {
 
     return (
         <View style={styles.container}>
+            {/*
             <MapView style={styles.map} region={{
                 latitude: location.latitude,
                 longitude: location.longitude,
@@ -44,6 +48,9 @@ const Mapa = ({ navigation }) => {
             }}>
                 <Marker coordinate={{ "latitude": location.latitude, "longitude": location.longitude }} />
             </MapView>
+            */}
+                <Image source={require('../assets/mapa-terreo.png')} style={styles.dcImage} />
+            
             <View style={styles.leftMenu}>
                 <Leftnavmenu navigation={navigation} />
             </View>
@@ -58,7 +65,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
-        gap: 50,
+        gap: 10,
     },
     map: {
         width: '100%',
@@ -68,7 +75,12 @@ const styles = StyleSheet.create({
         position: 'absolute',
         left: 0,
         top: 40,
-      },
+    },
+    dcImage: {
+        resizeMode: 'contain',
+        height: windowHeight * 0.8,
+        alignSelf: 'center',
+    },
 });
 
 export default Mapa
