@@ -1,5 +1,17 @@
 # DCrobot
 
+## Imagens do App
+
+![conversa_inicio](https://github.com/romeuleite/dcrobot/assets/119366384/3c1a0d2f-400f-4af2-9b71-26f5f634ec4b)
+
+![conversa_fim(1)](https://github.com/romeuleite/dcrobot/assets/119366384/dc10fd20-c166-45b4-a673-17151965f06f)
+
+![altera_emocao](https://github.com/romeuleite/dcrobot/assets/119366384/81ab0943-2456-4e2d-9f36-2372603184cb)
+
+![Configuracoes](https://github.com/romeuleite/dcrobot/assets/119366384/a92d8bf1-d5ed-4131-9cb8-7cdfce4578ea)
+
+![curiosidade](https://github.com/romeuleite/dcrobot/assets/119366384/aca75096-ffc2-4a6c-baac-1220f31c7ec5)
+
 ## Design do Robô
 
 Para visualizar o design do app, acesse o link abaixo:
